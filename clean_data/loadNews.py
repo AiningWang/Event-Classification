@@ -86,3 +86,24 @@ class NewsSet:
 			self.news_dict[news_num].tokenNewsTitle()
 
 
+
+
+if __name__ == '__main__':
+	file = open("output.txt", "w")
+	file2 = open("output2.txt", "w")
+	
+	p = NewsSet()
+	p.loadBasicInfo(open("sample.txt", "r"))
+	
+	print p.num_of_news
+	
+	q = RegularExpression()
+	for news_num in p.news_dict:
+		title = p.news_dict[news_num].title
+		real = p.news_dict[news_num].type_num
+		predict = q.regularEvalue(title)
+		file.write(str(news_num) + "\t" + str(real) + "\t" + str(predict) + "\t" + title + "\n")
+	file.close()
+	file2.close()
+
+

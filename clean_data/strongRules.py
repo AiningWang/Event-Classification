@@ -79,9 +79,9 @@ class CleanLabeledData:
 		self.title 	= ""
 
 
-	def clean(self):
+	def clean(self, input_filename, output_filename):
 		data = NewsSet()
-		data.loadBasicInfo(open(INPUT_FILE, "r"))
+		data.loadBasicInfo(open(input_filename, "r"))
 		evalue = RegularExpression()
 		output_file = open(OUTPUT_FILE, "w")
 		for news_num in data.news_dict:
@@ -101,7 +101,7 @@ class CleanLabeledData:
 
 if __name__ == '__main__':
 	p = CleanLabeledData()
-	p.clean()
+	p.clean(INPUT_FILE, OUTPUT_FILE)
 
 
 
