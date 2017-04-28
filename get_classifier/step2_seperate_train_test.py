@@ -28,10 +28,9 @@ def Output_Dataset(file, dataset):
 def Count_Type(dataset):
     counter = {}
     for type in dataset:
-        if type in counter:
+        counter[type] = 0
+        for label in dataset[type]:
             counter[type] += 1
-        else:
-            counter[type] == 1
     return counter
 
 
@@ -66,5 +65,5 @@ if __name__ == '__main__':
     type_counter = Count_Type(all_data_set)
     print type_counter
     train_data_set, test_data_set = Seperate_Dataset(all_data_set, type_counter)
-    Load_Data_Set(file2, train_data_set)
-    Load_Data_Set(file3, test_data_set)
+    Output_Dataset(file2, train_data_set)
+    Output_Dataset(file3, test_data_set)

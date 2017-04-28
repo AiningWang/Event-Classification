@@ -82,4 +82,4 @@ if __name__ == '__main__':
             if type not in all_data_set:
                 all_data_set[type] = {}
             all_data_set[type][label] = word_vector
-            Output_Dataset(file3, all_data_set)
+    Output_Dataset(file3, all_data_set)

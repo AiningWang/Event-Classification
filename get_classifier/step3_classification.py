@@ -3,6 +3,7 @@
 import numpy as np
 import time
 from sklearn import svm
+from sklearn.externals import joblib
 
 
 def Load_Data_Set(file):
@@ -41,6 +42,8 @@ if __name__ == '__main__':
     testX, testY = SeperateXY(test_set)
     clf = svm.SVC(decision_function_shape='ovo',kernel='linear')
     clf.fit(trainX, trainY)  # training the svc model
-    result = clf.predict(testX) # predict the target of testing samples
+    joblib.dump(clf, "Event2_Keyword_Classification.pkl")
+    clf2 = joblib.load("Event2_Keyword_Classification.pkl")
+    result = clf2.predict(testX) # predict the target of testing samples
     print result
 
