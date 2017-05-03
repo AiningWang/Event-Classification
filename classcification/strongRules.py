@@ -32,25 +32,25 @@ class RegularExpression:
 
 	def financeEvalue(self, title):
 		self.finance_score = 0
-		if title.find("融资") != -1:
+		if title.find(("融资").decode('utf-8')) != -1:
 			self.finance_score += 1
-		if title.find("投资") != -1:
+		if title.find(("投资").decode('utf-8')) != -1:
 			self.finance_score += 1
-		if title.find("收购") != -1:
+		if title.find(("收购").decode('utf-8')) != -1:
 			self.finance_score += 1
-		if title.find("获投") != -1:
+		if title.find(("获投").decode('utf-8')) != -1:
 			self.finance_score += 1
 
 
 	def productEvalue(self, title):
 		self.product_score = 0
-		if title.find("发布") != -1:
+		if title.find(("发布").decode('utf-8')) != -1:
 			self.product_score += 1
-		if title.find("上线") != -1:
+		if title.find(("上线").decode('utf-8')) != -1:
 			self.product_score += 1
-		if title.find("产品") != -1:
+		if title.find(("产品").decode('utf-8')) != -1:
 			self.product_score += 1
-		if title.find("推出") != -1:
+		if title.find(("推出").decode('utf-8')) != -1:
 			self.product_score += 1
 
 
